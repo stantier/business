@@ -1,6 +1,13 @@
 import React from 'react'
 
+import { useLocation } from "react-router-dom";
+
 export default function Footer() {
+
+  const { pathname } = useLocation();
+  console.log(pathname);
+  if (pathname === "/login" || pathname === "/adminlogin" || pathname === "/admindashboard" ) return null;
+  else {
   return (
     <div>
 {/* ======= Footer ======= */}
@@ -75,4 +82,5 @@ export default function Footer() {
 
     </div>
   )
+}
 }

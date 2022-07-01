@@ -1,12 +1,34 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
+
+
 
 export default function Productlist({products}) {
+// const [user,setUser]=useState(['Koaml','Raj','Suman'])
+const[user,setUser]=useState([{
+  fname:'Rohan',
+  lname:'Rana',
+  email:'rohan@gmail.com'
+}])
 
-  const changeValue=()=>{
-    alert('test')
-  }
+const getvalue=()=>{
   
+//  setUser([...user,"Ramandeep","Vikas","Sonia"])
+setUser([{
+
+  fname:'Priya',
+  lname:'Rana',
+  email:'priya@gmail.com'
+}])
+}
+
+
+
+const deleteData=()=>{
+  user.push()
+  alert("deleted")
+}
   //console.log(products)
 //const {pname,price,description}=products
 //   let location=useLocation()
@@ -43,7 +65,20 @@ return(
         })
       } */}
 
-      <button onClick={changeValue}>ChangeValue</button>
+     <p class="text-black">User :{
+       user.map((res)=>{
+         return(
+           <>
+             <p>{res.fname}</p>
+             <p>{res.lname}</p>
+             <p>{res.email}</p>
+           </>
+         )
+
+       })
+     }</p>
+     <button onClick={getvalue}>Add User</button>
+     <button onClick={deleteData}>Delete User</button>
       {/* <h1 className="text-black" >{pname}</h1>
       <p className="text-black">{description}</p>
       <p className="text-black">{price}</p> */}

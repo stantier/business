@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, Outlet,useParams} from 'react-router-dom'
 import Productlist from '../components/Productlist';
+// import TestComponent from './TestComponent';
 
 export default function Products() {
 
@@ -51,10 +52,11 @@ export default function Products() {
   {/* ======= Services Section ======= */}
   <section id="services" className="services section-bg">
     <div className="container" data-aos="fade-up">
-
+    {/* <TestComponent /> */}
 {/* <Productlist pname='nePlus 7 Pro (Almond, 256 GB)' price='23000' description='Rear Camera|48MP (Primary)+ 8MP (Tele-photo)+16MP (ultrawide)| Front Camera|16 MP POP-UP Camera|8GB RAM|Android pie'/> */}
 
  <Productlist products={products}/> 
+
 
 {/* <Productlist {...products} /> */}
 <Outlet />

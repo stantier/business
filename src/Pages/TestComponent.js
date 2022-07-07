@@ -18,6 +18,14 @@ export default class TestComponent extends Component {
     })
 
   }
+  componentDidMount(){
+   
+   // console.log("component did mount")
+  }
+  componentDidUpdate(){
+   
+  //  console.log("component did Update ")
+  }
   render() {
     return (
 

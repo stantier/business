@@ -1,4 +1,6 @@
 import React from 'react'
+import LifeCycle from './LifeCycle'
+import TestComponent from './TestComponent'
 
 export default function Contact() {
   return (
@@ -46,6 +48,9 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <TestComponent />
+
+      <LifeCycle />
       <div className="row mt-5 justify-content-center" data-aos="fade-up">
         <div className="col-lg-10">
           <form action="forms/contact.php" method="post" role="form" className="php-email-form">

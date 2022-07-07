@@ -5,30 +5,57 @@ import { useState } from 'react';
 
 
 export default function Productlist({products}) {
+
+  const [record,setRecord]=useState([])
+
+  const[data,setData]=useState({
+    pname:'',
+    price:'',
+    description:''
+  })
+
+
+  const handleChange=(event)=>{
+   // console.log(event.target.value)
+   setData({...data,[event.target.name]:event.target.value})
+
+  }
+
+
+
+
+const onsubmit=()=>{
+
+setRecord([...record,data])
+  //console.log(data)
+}
+
+
+
 // const [user,setUser]=useState(['Koaml','Raj','Suman'])
-const[user,setUser]=useState([{
-  fname:'Rohan',
-  lname:'Rana',
-  email:'rohan@gmail.com'
-}])
+// const[user,setUser]=useState([{
+//   fname:'Rohan',
+//   lname:'Rana',
+//   email:'rohan@gmail.com'
+// }])
 
-const getvalue=()=>{
+// const getvalue=()=>{
   
-//  setUser([...user,"Ramandeep","Vikas","Sonia"])
-setUser([{
+// //  setUser([...user,"Ramandeep","Vikas","Sonia"])
+// setUser([{
 
-  fname:'Priya',
-  lname:'Rana',
-  email:'priya@gmail.com'
-}])
-}
+//   fname:'Priya',
+//   lname:'Rana',
+//   email:'priya@gmail.com'
+// }])
+// }
 
 
 
-const deleteData=()=>{
-  user.push()
-  alert("deleted")
-}
+// const deleteData=()=>{
+//   user.pop()
+//   alert("deleted")
+// }
   //console.log(products)
 //const {pname,price,description}=products
 //   let location=useLocation()
@@ -65,7 +92,7 @@ return(
         })
       } */}
 
-     <p class="text-black">User :{
+     {/* <p class="text-black">User :{
        user.map((res)=>{
          return(
            <>
@@ -76,9 +103,17 @@ return(
          )
 
        })
-     }</p>
-     <button onClick={getvalue}>Add User</button>
-     <button onClick={deleteData}>Delete User</button>
+     }</p> */}
+     {/* <button onClick={getvalue}>Add User</button>
+     <button onClick={deleteData}>Delete User</button> */}
+     <h2 class="text-black">Add Products</h2>
+
+     <input type="text" name="pname" placeholder="Enter Product Name" onChange={handleChange}/>
+     <input type="text" name="price" placeholder="Enter Price" onChange={handleChange} />
+     <input type="text" name="description" placeholder="Enter Description" onChange={handleChange} />
+     <button onClick={onsubmit}>Add</button>
+
+
       {/* <h1 className="text-black" >{pname}</h1>
       <p className="text-black">{description}</p>
       <p className="text-black">{price}</p> */}
@@ -91,7 +126,7 @@ return(
         {/* list group item*/}
       
         {
-        products.map((product)=>{
+        record.map((product)=>{
 return(
         <>
         <li className="list-group-item">

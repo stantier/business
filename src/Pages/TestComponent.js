@@ -18,6 +18,7 @@ export default class TestComponent extends Component {
     })
 
   }
+
   componentDidMount(){
    
    // console.log("component did mount")
@@ -26,6 +27,7 @@ export default class TestComponent extends Component {
    
   //  console.log("component did Update ")
   }
+
   render() {
     return (
 

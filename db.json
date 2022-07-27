@@ -1,0 +1,18 @@
+{
+    "users": [
+      {
+        "firstName": "vikas",
+        "lastName": "rani",
+        "email": "sims123@gmail.com",
+        "password": "oiuy",
+        "id": 2
+      },
+      {
+        "firstName": "Amandeep",
+        "lastName": "kaur",
+        "email": "aman@gmail.com",
+        "password": "1234",
+        "id": 3
+      }
+    ]
+  }

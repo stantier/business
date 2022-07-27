@@ -1,9 +1,27 @@
 import React from 'react'
 import './Login.css'
+import { useFormik } from 'formik';
 
 import { useLocation } from 'react-router-dom'
 
 export default function Login() {
+
+  const userData={
+    email:'',
+    password:''
+  }
+  const formik = useFormik({
+
+    initialValues:userData,
+
+    onSubmit: values => {
+
+      alert(JSON.stringify(values, null, 2));
+
+    },
+
+  });
+
   return (
     <div>
 
@@ -16,17 +34,22 @@ export default function Login() {
         <div className="card border-0 shadow rounded-3 my-5">
           <div className="card-body p-4 p-sm-5">
             <h5 className="card-title text-center mb-5 fw-light fs-5">User Sign In</h5>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
               <div className="form-floating mb-3">
-                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                <input type="email" name="email"  onChange={formik.handleChange}
+
+value={formik.values.email} className="form-control" id="floatingInput" placeholder="name@example.com" />
                 <label htmlFor="floatingInput">Email address</label>
               </div>
               <div className="form-floating mb-3">
-                <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
+                <input type="password" name="password" className="form-control" id="floatingPassword" placeholder="Password" />
                 <label htmlFor="floatingPassword">Password</label>
               </div>
               <div className="form-check mb-3">
-                <input className="form-check-input" type="checkbox" defaultValue id="rememberPasswordCheck" />
+                <input className="form-check-input" type="checkbox"  
+                onChange={formik.handleChange}
+
+value={formik.values.email} defaultValue id="rememberPasswordCheck" />
                 <label className="form-check-label" htmlFor="rememberPasswordCheck">
                   Remember password
                 </label>

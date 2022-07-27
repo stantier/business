@@ -14,7 +14,9 @@ import Login from "./components/Login/Login";
 import AdminDashboard from "./components/Admin/AdminDashboard";
 
 import AdminLogin from "./components/Admin/Login/AdminLogin";
-
+import Register from "./components/Register/Register";
+import ListUser from "./components/User/ListUser";
+import UserDashboard from "./components/User/UserDashboard";
 
 function App() {
   return (
@@ -32,7 +34,7 @@ function App() {
 
           <Route path="login" element={<Login />} />
 
-          
+          <Route path="register" element={<Register />} />
 
           <Route path="/" element={<Header />}>
            
@@ -41,6 +43,10 @@ function App() {
             <Route path="teams" element={<Teams />} />
             <Route path="services" element={<Services />} />
             <Route path="contact" element={<Contact />} />
+
+            <Route path="users" element={<UserDashboard/>} >
+            <Route path="list" element={<ListUser /> }/>
+            </Route>
 
           
             {/*  Protected  Routes....*/}
